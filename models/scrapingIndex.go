@@ -36,8 +36,8 @@ func (scrapingIndex *ScrapingIndex) Save() map[string]interface{} {
 	} else {
 		_, errDelete := collection.DeleteOne(context.Background(), scrapingIndex)
 		_, errInsert := collection.InsertOne(context.Background(), scrapingIndex)
-		fmt.Println("error updating")
-		fmt.Println(err)
+		//fmt.Println("error updating")
+		//fmt.Println(err)
 		fmt.Println(errInsert)
 		fmt.Println(errDelete)
 		return nil
