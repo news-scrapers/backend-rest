@@ -20,6 +20,8 @@ func main() {
 
 	router.HandleFunc("/api/user/login", controllers.Authenticate).Methods("POST")
 	router.HandleFunc("/api/workers/new_scraped", controllers.AddNew).Methods("POST")
+	router.HandleFunc("/api/workers/scraping_index", controllers.SaveScrapingIndex).Methods("POST")
+	router.HandleFunc("/api/workers/scraping_index", controllers.GetScrapingIndex).Methods("GET")
 
 	// router.Use(middlewares.JwtAuthentication) //attach JWT auth middleware
 	router.Use(middlewares.MiddlewareLogger) //attach JWT auth middleware

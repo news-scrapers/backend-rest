@@ -3,15 +3,16 @@ package models
 import (
 	u "backend-rest/utils"
 	"context"
+	"time"
 )
 
 type NewScraped struct {
-	Headline  string `json:"headline"`
-	Date      string `json:"date"`
-	Content   string `json:"content"`
-	Url       string `json:"url"`
-	NewsPaper string `json:"newspaper"`
-	ScraperID string `json:"scraper_id"`
+	Headline  string    `json:"headline"`
+	Date      time.Time `json:"date"`
+	Content   string    `json:"content"`
+	Url       string    `json:"url"`
+	NewsPaper string    `json:"newspaper"`
+	ScraperID string    `json:"scraper_id"`
 }
 
 func (newScraped *NewScraped) Create() map[string]interface{} {
