@@ -56,7 +56,7 @@ func GetCurrentIndex(scraperID string) (scrapingIndex ScrapingIndex) {
 	results := ScrapingIndex{}
 	err := collection.FindOne(context.Background(), bson.M{"scraper_id": scraperID}, &options).Decode(&results)
 	if err != nil {
-		panic(err)
+		fmt.Println(err)
 	}
 	scrapingIndex = results
 	return scrapingIndex
