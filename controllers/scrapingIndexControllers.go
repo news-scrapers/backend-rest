@@ -25,7 +25,5 @@ var GetScrapingIndex = func(w http.ResponseWriter, r *http.Request) {
 	v := r.URL.Query()
 	scraperID := v.Get("scraper_id")
 	index := models.GetCurrentIndex(scraperID)
-	var resp map[string]interface{} = make(map[string]interface{})
-	resp["data"] = index
-	u.Respond(w, resp)
+	u.Respond(w, index)
 }
