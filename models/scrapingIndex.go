@@ -6,8 +6,8 @@ import (
 	"fmt"
 	"time"
 
+	"go.mongodb.org/mongo-driver/bson"
 	"go.mongodb.org/mongo-driver/mongo/options"
-	"gopkg.in/mgo.v2/bson"
 )
 
 type ScrapingIndex struct {
@@ -31,12 +31,15 @@ func (scrapingIndex *ScrapingIndex) Save() map[string]interface{} {
 
 	if err == nil {
 		resp := u.Message(true, "success")
-		resp["new"] = scrapingIndex
+		resp["data"] = scrapingIndex
 		return resp
 	} else {
-		//_, err2 := collection.InsertOne(context.Background(), scrapingIndex)
+		_, errDelete := collection.DeleteOne(context.Background(), scrapingIndex)
+		_, errInsert := collection.InsertOne(context.Background(), scrapingIndex)
 		fmt.Println("error updating")
 		fmt.Println(err)
+		fmt.Println(errInsert)
+		fmt.Println(errDelete)
 		return nil
 	}
 
@@ -46,19 +49,16 @@ func GetCurrentIndex(scraperID string) (scrapingIndex ScrapingIndex) {
 	db := GetDB()
 	collection := db.Collection("ScrapingIndex")
 
-	options := options.FindOptions{}
+	options := options.FindOneOptions{}
 	// Sort by `_id` field descending
-	options.Sort = bson.D{{"date_last_new", 1}}
-	limit := int64(1)
-	options.Limit = &limit
+	options.Sort = bson.D{{"date_last_new", int32(1)}}
 
-	results := []ScrapingIndex{}
-	res, err := collection.Find(context.Background(), bson.M{"scraper_id": scraperID}, &options)
-	res.Decode(&results)
+	results := ScrapingIndex{}
+	err := collection.FindOne(context.Background(), bson.M{"scraper_id": scraperID}, &options).Decode(&results)
 	if err != nil {
 		panic(err)
 	}
-	scrapingIndex = results[0]
+	scrapingIndex = results
 	return scrapingIndex
 
 }
