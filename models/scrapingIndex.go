@@ -34,12 +34,12 @@ func (scrapingIndex *ScrapingIndex) Save() map[string]interface{} {
 		resp["data"] = scrapingIndex
 		return resp
 	} else {
-		_, errDelete := collection.DeleteOne(context.Background(), scrapingIndex)
-		_, errInsert := collection.InsertOne(context.Background(), scrapingIndex)
+		//_, errDelete := collection.DeleteOne(context.Background(), scrapingIndex)
+		//_, errInsert := collection.InsertOne(context.Background(), scrapingIndex)
 		//fmt.Println("error updating")
 		//fmt.Println(err)
-		fmt.Println(errInsert)
-		fmt.Println(errDelete)
+		//fmt.Println(errInsert)
+		//fmt.Println(errDelete)
 		return nil
 	}
 
