@@ -23,7 +23,7 @@ type NewScraped struct {
 func (newScraped *NewScraped) Create() map[string]interface{} {
 
 	db := GetDB()
-	collection := db.Collection("NewsScraped")
+	collection := db.Collection("NewsContentScraped")
 
 	options := options.FindOneAndReplaceOptions{}
 	upsert := true
