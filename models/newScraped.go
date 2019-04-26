@@ -10,6 +10,8 @@ import (
 )
 
 type NewScraped struct {
+	Page      int       `json:"page"`
+	FullPage  bool      `json:"full_page"`
 	Headline  string    `json:"headline"`
 	Date      time.Time `json:"date"`
 	Content   string    `json:"content"`
