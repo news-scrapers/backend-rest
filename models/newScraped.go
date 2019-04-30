@@ -18,6 +18,7 @@ type NewScraped struct {
 	Url       string    `json:"url"`
 	NewsPaper string    `json:"newspaper"`
 	ScraperID string    `json:"scraper_id" bson:"scraper_id"`
+	ID        string    `json:"id"`
 }
 
 func (newScraped *NewScraped) Create() map[string]interface{} {
