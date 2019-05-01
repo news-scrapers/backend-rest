@@ -1,8 +1,8 @@
 package app
 
 import (
+	u "backend-rest/utils"
 	"net/http"
-	u "go-mux-jwt-mongo/utils"
 )
 
 var NotFoundHandler = func(next http.Handler) http.Handler {

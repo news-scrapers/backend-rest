@@ -3,10 +3,8 @@ package models
 import (
 	u "backend-rest/utils"
 	"context"
+	"fmt"
 	"time"
-
-	"go.mongodb.org/mongo-driver/mongo/options"
-	"gopkg.in/mgo.v2/bson"
 )
 
 type NewScraped struct {
@@ -26,19 +24,14 @@ func (newScraped *NewScraped) Create() map[string]interface{} {
 	db := GetDB()
 	collection := db.Collection("NewsContentScraped")
 
-	options := options.FindOneAndReplaceOptions{}
-	upsert := true
-	options.Upsert = &upsert
-	err := collection.FindOneAndReplace(context.Background(), bson.M{"url": newScraped.Url}, newScraped, &options)
-
-	//_, err := collection.InsertOne(context.Background(), newScraped)
+	_, err := collection.InsertOne(context.Background(), newScraped)
 
 	if err == nil {
 		resp := u.Message(true, "success")
 		resp["new"] = newScraped
 		return resp
 	} else {
-		//fmt.Println(err)
+		fmt.Println(err)
 		return nil
 	}
 
