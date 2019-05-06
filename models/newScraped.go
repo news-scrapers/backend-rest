@@ -5,6 +5,8 @@ import (
 	"context"
 	"fmt"
 	"time"
+
+	"go.mongodb.org/mongo-driver/bson"
 )
 
 type NewScraped struct {
@@ -24,15 +26,30 @@ func (newScraped *NewScraped) Create() map[string]interface{} {
 	db := GetDB()
 	collection := db.Collection("NewsContentScraped")
 
-	_, err := collection.InsertOne(context.Background(), newScraped)
+	// options := options.FindOneAndReplaceOptions{}
+	// upsert := true
+	// options.Upsert = &upsert
+	// err := collection.FindOneAndReplace(context.Background(), bson.M{"url": newScraped.Url}, newScraped, &options)
+	result := &NewScraped{}
+	err := collection.FindOne(context.Background(), bson.M{"url": newScraped.Url}).Decode(result)
 
-	if err == nil {
-		resp := u.Message(true, "success")
-		resp["new"] = newScraped
-		return resp
+	if err != nil {
+		err2, _ := collection.InsertOne(context.Background(), newScraped)
+		if err2 != nil {
+			fmt.Println("saved new with " + newScraped.Url)
+			resp := u.Message(true, "success")
+			resp["new"] = newScraped
+			return resp
+		} else {
+			fmt.Println("error saving new with url " + newScraped.Url)
+			fmt.Println(err)
+			return nil
+		}
 	} else {
-		fmt.Println(err)
+		fmt.Println("record already exists with url " + newScraped.Url)
 		return nil
 	}
+
+	//_, err := collection.InsertOne(context.Background(), newScraped)
 
 }

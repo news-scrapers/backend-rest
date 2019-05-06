@@ -19,7 +19,7 @@ func TestAddNew(t *testing.T) {
 
 	mux.HandleFunc("/api/workers/new_scraped", AddNew)
 
-	body := models.NewScraped{Headline: "New"}
+	body := models.NewScraped{Headline: "New", Url: "http://test.info"}
 	json, _ := json.Marshal(body)
 
 	request, _ := http.NewRequest("POST", "/api/workers/new_scraped", bytes.NewBuffer(json))
