@@ -3,15 +3,17 @@ package models
 import (
 	"context"
 	"fmt"
+	"os"
+	"time"
+
 	_ "github.com/go-sql-driver/mysql"
 	"github.com/joho/godotenv"
 	"go.mongodb.org/mongo-driver/mongo"
 	"go.mongodb.org/mongo-driver/mongo/options"
-	"os"
-	"time"
 )
 
 var db *mongo.Database
+
 func init() {
 
 	e := godotenv.Load()
@@ -23,7 +25,7 @@ func init() {
 
 	ctx, _ := context.WithTimeout(context.Background(), 10*time.Second)
 	client, _ := mongo.Connect(ctx, options.Client().ApplyURI(dbAddress))
-	db = client.Database("testing")
+	db = client.Database("news-scraped")
 }
 
 func GetDB() *mongo.Database {
