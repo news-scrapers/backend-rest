@@ -15,6 +15,7 @@ type ScrapingIndex struct {
 	DateScraping    time.Time `json:"date_scraping" bson:"date_scraping"`
 	LastHistoricUrl string    `json:"last_historic_url" bson:"last_historic_url"`
 	Page            int64     `json:"page" bson:"page"`
+	UrlIndex        int64     `json:"url_index" bson:"url_index"`
 	NewsPaper       string    `json:"newspaper" bson:"newspaper"`
 	ScraperID       string    `json:"scraper_id" bson:"scraper_id"`
 	DeviceID        string    `json:"device_id" bson:"device_id"`
