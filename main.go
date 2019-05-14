@@ -20,6 +20,7 @@ func main() {
 
 	router.HandleFunc("/api/user/login", controllers.Authenticate).Methods("POST")
 	router.HandleFunc("/api/workers/new_scraped", controllers.AddNew).Methods("POST")
+	router.HandleFunc("/api/workers/new_scraped_many", controllers.AddMany).Methods("POST")
 	router.HandleFunc("/api/workers/scraping_index", controllers.SaveScrapingIndex).Methods("POST")
 	router.HandleFunc("/api/workers/scraping_index", controllers.GetScrapingIndex).Methods("GET")
 

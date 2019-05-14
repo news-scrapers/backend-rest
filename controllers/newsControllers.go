@@ -20,3 +20,18 @@ var AddNew = func(w http.ResponseWriter, r *http.Request) {
 	resp := NewScraped.Create()
 	u.Respond(w, resp)
 }
+
+var AddMany = func(w http.ResponseWriter, r *http.Request) {
+
+	newScraped := []models.NewScraped{}
+
+	err := json.NewDecoder(r.Body).Decode(&newScraped)
+	if err != nil {
+		u.Respond(w, u.Message(false, "Error while decoding request body"))
+		return
+	}
+
+	_ = models.CreateManyNewsScraped(newScraped)
+	resp := u.Message(true, "success")
+	u.Respond(w, resp)
+}

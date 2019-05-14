@@ -53,3 +53,20 @@ func (newScraped *NewScraped) Create() map[string]interface{} {
 	//_, err := collection.InsertOne(context.Background(), newScraped)
 
 }
+
+func CreateManyNewsScraped(newsScraped []NewScraped) error {
+
+	db := GetDB()
+	collection := db.Collection("NewsContentScraped")
+	docs := []interface{}{}
+
+	for _, result := range newsScraped {
+		docs = append(docs, result)
+	}
+	_, err := collection.InsertMany(context.Background(), docs)
+	if err != nil {
+		fmt.Println(err)
+		return err
+	}
+	return nil
+}
