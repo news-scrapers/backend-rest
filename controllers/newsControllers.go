@@ -4,6 +4,7 @@ import (
 	"backend-rest/models"
 	u "backend-rest/utils"
 	"encoding/json"
+	"fmt"
 	"net/http"
 )
 
@@ -26,6 +27,9 @@ var AddMany = func(w http.ResponseWriter, r *http.Request) {
 	newScraped := []models.NewScraped{}
 
 	err := json.NewDecoder(r.Body).Decode(&newScraped)
+	fmt.Printf("inserting %v", len(newScraped))
+	fmt.Println("")
+
 	if err != nil {
 		u.Respond(w, u.Message(false, "Error while decoding request body"))
 		return
