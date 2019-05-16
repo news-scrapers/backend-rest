@@ -10,7 +10,7 @@ require (
 	github.com/gorilla/handlers v1.4.0
 	github.com/gorilla/mux v1.7.1
 	github.com/joho/godotenv v1.3.0
-	github.com/sirupsen/logrus v1.4.1
+	github.com/sirupsen/logrus v1.0.3
 	github.com/stretchr/testify v1.3.0
 	github.com/xdg/scram v0.0.0-20180814205039-7eeb5667e42c // indirect
 	github.com/xdg/stringprep v1.0.0 // indirect
