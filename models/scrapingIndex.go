@@ -64,3 +64,21 @@ func GetCurrentIndex(scraperID string) (scrapingIndex ScrapingIndex) {
 	return scrapingIndex
 
 }
+
+func GetCurrentIndexNewsPaper(scraperID string, newsPaper string) (scrapingIndex ScrapingIndex) {
+	db := GetDB()
+	collection := db.Collection("ScrapingIndex")
+
+	options := options.FindOneOptions{}
+	// Sort by `_id` field descending
+	options.Sort = bson.D{{"date_last_new", int32(1)}}
+
+	results := ScrapingIndex{}
+	err := collection.FindOne(context.Background(), bson.M{"scraper_id": scraperID, "newspaper": newsPaper}, &options).Decode(&results)
+	if err != nil {
+		log.Error(err)
+	}
+	scrapingIndex = results
+	return scrapingIndex
+
+}

@@ -28,6 +28,7 @@ func main() {
 	router.HandleFunc("/api/workers/new_scraped_many", controllers.AddMany).Methods("POST")
 	router.HandleFunc("/api/workers/scraping_index", controllers.SaveScrapingIndex).Methods("POST")
 	router.HandleFunc("/api/workers/scraping_index", controllers.GetScrapingIndex).Methods("GET")
+	router.HandleFunc("/api/workers/scraping_index_newspaper", controllers.GetScrapingIndexNewsPaper).Methods("GET")
 
 	// router.Use(middlewares.JwtAuthentication) //attach JWT auth middleware
 	router.Use(middlewares.MiddlewareLogger) //attach JWT auth middleware
