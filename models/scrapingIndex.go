@@ -3,9 +3,9 @@ package models
 import (
 	u "backend-rest/utils"
 	"context"
-	"fmt"
 	"time"
 
+	log "github.com/sirupsen/logrus"
 	"go.mongodb.org/mongo-driver/bson"
 	"go.mongodb.org/mongo-driver/mongo/options"
 )
@@ -58,7 +58,7 @@ func GetCurrentIndex(scraperID string) (scrapingIndex ScrapingIndex) {
 	results := ScrapingIndex{}
 	err := collection.FindOne(context.Background(), bson.M{"scraper_id": scraperID}, &options).Decode(&results)
 	if err != nil {
-		fmt.Println(err)
+		log.Error(err)
 	}
 	scrapingIndex = results
 	return scrapingIndex

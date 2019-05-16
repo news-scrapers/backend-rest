@@ -4,15 +4,20 @@ import (
 	"backend-rest/controllers"
 	"backend-rest/middlewares"
 	"fmt"
-	"log"
+	"io"
 	"net/http"
 	"os"
 
 	"github.com/gorilla/handlers"
 	"github.com/gorilla/mux"
+	log "github.com/sirupsen/logrus"
 )
 
+const logPath = "logs.log"
+
 func main() {
+
+	configLogs()
 
 	router := mux.NewRouter()
 
@@ -40,6 +45,21 @@ func main() {
 
 	// start server listen
 	// with error handling
-	fmt.Println("Starting server on port " + port)
+	log.Info("Starting server on port " + port)
 	log.Fatal(http.ListenAndServe(":"+port, handlers.CORS(originsOk, headersOk, methodsOk)(router)))
+}
+
+func configLogs() {
+	Formatter := new(log.TextFormatter)
+	Formatter.TimestampFormat = "02-01-2006 15:04:05"
+	Formatter.FullTimestamp = true
+	log.SetFormatter(Formatter)
+
+	f, err := os.OpenFile(logPath, os.O_WRONLY|os.O_CREATE, 0755)
+	if err != nil {
+		fmt.Println(err)
+	}
+	//log.SetOutput(f)
+	mw := io.MultiWriter(os.Stdout, f)
+	log.SetOutput(mw)
 }

@@ -6,6 +6,8 @@ import (
 	"encoding/json"
 	"fmt"
 	"net/http"
+
+	log "github.com/sirupsen/logrus"
 )
 
 var AddNew = func(w http.ResponseWriter, r *http.Request) {
@@ -27,8 +29,8 @@ var AddMany = func(w http.ResponseWriter, r *http.Request) {
 	newScraped := []models.NewScraped{}
 
 	err := json.NewDecoder(r.Body).Decode(&newScraped)
-	fmt.Printf("inserting %v", len(newScraped))
-	fmt.Println("")
+	ms := fmt.Sprintf("inserting %v news from ", len(newScraped)) + newScraped[0].NewsPaper
+	log.Info(ms)
 
 	if err != nil {
 		u.Respond(w, u.Message(false, "Error while decoding request body"))

@@ -4,7 +4,6 @@ import (
 	"backend-rest/models"
 	u "backend-rest/utils"
 	"encoding/json"
-	"fmt"
 	"net/http"
 )
 
@@ -16,7 +15,6 @@ var CreateAccount = func(w http.ResponseWriter, r *http.Request) {
 		w.WriteHeader(http.StatusBadRequest)
 		return
 	}
-	fmt.Println(*account)
 	resp := account.Create() //Create account
 	u.Respond(w, resp)
 }
