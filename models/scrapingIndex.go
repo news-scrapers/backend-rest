@@ -5,7 +5,8 @@ import (
 	"context"
 	"time"
 
-	log "github.com/sirupsen/logrus"
+	log "log"
+
 	"go.mongodb.org/mongo-driver/bson"
 	"go.mongodb.org/mongo-driver/mongo/options"
 )
@@ -29,7 +30,7 @@ func (scrapingIndex *ScrapingIndex) Save() map[string]interface{} {
 	upsert := true
 	options.Upsert = &upsert
 
-	log.Info("saving scraping index for id" + scrapingIndex.ScraperID + " and newspaper " + scrapingIndex.NewsPaper)
+	log.Println("saving scraping index for id" + scrapingIndex.ScraperID + " and newspaper " + scrapingIndex.NewsPaper)
 	err := collection.FindOneAndReplace(context.Background(), bson.M{"scraper_id": scrapingIndex.ScraperID, "newspaper": scrapingIndex.NewsPaper}, scrapingIndex, &options)
 
 	if err == nil {
@@ -59,7 +60,7 @@ func GetCurrentIndex(scraperID string) (scrapingIndex ScrapingIndex) {
 	results := ScrapingIndex{}
 	err := collection.FindOne(context.Background(), bson.M{"scraper_id": scraperID}, &options).Decode(&results)
 	if err != nil {
-		log.Error(err)
+		log.Println(err)
 	}
 	scrapingIndex = results
 	return scrapingIndex
@@ -77,7 +78,7 @@ func GetCurrentIndexNewsPaper(scraperID string, newsPaper string) (scrapingIndex
 	results := ScrapingIndex{}
 	err := collection.FindOne(context.Background(), bson.M{"scraper_id": scraperID, "newspaper": newsPaper}, &options).Decode(&results)
 	if err != nil {
-		log.Error(err)
+		log.Println(err)
 	}
 	scrapingIndex = results
 	return scrapingIndex

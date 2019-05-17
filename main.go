@@ -3,21 +3,23 @@ package main
 import (
 	"backend-rest/controllers"
 	"backend-rest/middlewares"
-	"fmt"
 	"io"
+	ioutil "io/ioutil"
+	log "log"
 	"net/http"
 	"os"
 
 	"github.com/gorilla/handlers"
 	"github.com/gorilla/mux"
-	log "github.com/sirupsen/logrus"
 )
 
 const logPath = "logs.log"
 
+var Logger *log.Logger
+
 func main() {
 
-	configLogs()
+	Init(ioutil.Discard, os.Stdout, os.Stdout, os.Stderr)
 
 	router := mux.NewRouter()
 
@@ -46,21 +48,45 @@ func main() {
 
 	// start server listen
 	// with error handling
-	log.Info("Starting server on port " + port)
-	log.Fatal(http.ListenAndServe(":"+port, handlers.CORS(originsOk, headersOk, methodsOk)(router)))
+	Info.Println("Starting server on port " + port)
+	Error.Println(http.ListenAndServe(":"+port, handlers.CORS(originsOk, headersOk, methodsOk)(router)))
 }
 
-func configLogs() {
-	Formatter := new(log.TextFormatter)
-	Formatter.TimestampFormat = "02-01-2006 15:04:05"
-	Formatter.FullTimestamp = true
-	log.SetFormatter(Formatter)
+var (
+	Trace   *log.Logger
+	Info    *log.Logger
+	Warning *log.Logger
+	Error   *log.Logger
+)
 
-	f, err := os.OpenFile(logPath, os.O_WRONLY|os.O_CREATE, 0755)
+func Init(
+	traceHandle io.Writer,
+	infoHandle io.Writer,
+	warningHandle io.Writer,
+	errorHandle io.Writer) {
+
+	Trace = log.New(traceHandle,
+		"TRACE: ",
+		log.Ldate|log.Ltime|log.Lshortfile)
+
+	Info = log.New(infoHandle,
+		"INFO: ",
+		log.Ldate|log.Ltime|log.Lshortfile)
+
+	Warning = log.New(warningHandle,
+		"WARNING: ",
+		log.Ldate|log.Ltime|log.Lshortfile)
+
+	Error = log.New(errorHandle,
+		"ERROR: ",
+		log.Ldate|log.Ltime|log.Lshortfile)
+	file, err := os.OpenFile("file.txt", os.O_CREATE|os.O_WRONLY|os.O_APPEND, 0666)
+
 	if err != nil {
-		fmt.Println(err)
+		log.Fatalln("Failed to open log file")
 	}
-	//log.SetOutput(f)
-	mw := io.MultiWriter(os.Stdout, f)
-	log.SetOutput(mw)
+
+	Logger = log.New(file,
+		"PREFIX: ",
+		log.Ldate|log.Ltime|log.Lshortfile)
 }

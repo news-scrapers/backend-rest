@@ -5,7 +5,8 @@ import (
 	"context"
 	"time"
 
-	log "github.com/sirupsen/logrus"
+	log "log"
+
 	"go.mongodb.org/mongo-driver/bson"
 )
 
@@ -36,17 +37,17 @@ func (newScraped *NewScraped) Create() map[string]interface{} {
 	if err != nil {
 		err2, _ := collection.InsertOne(context.Background(), newScraped)
 		if err2 != nil {
-			log.Info("saved new with " + newScraped.Url)
+			log.Println("saved new with " + newScraped.Url)
 			resp := u.Message(true, "success")
 			resp["new"] = newScraped
 			return resp
 		} else {
-			log.Error("error saving new with url " + newScraped.Url)
-			log.Error(err)
+			log.Println("error saving new with url " + newScraped.Url)
+			log.Println(err)
 			return nil
 		}
 	} else {
-		log.Error("record already exists with url " + newScraped.Url)
+		log.Println("record already exists with url " + newScraped.Url)
 		return nil
 	}
 
@@ -65,7 +66,7 @@ func CreateManyNewsScraped(newsScraped []NewScraped) error {
 	}
 	_, err := collection.InsertMany(context.Background(), docs)
 	if err != nil {
-		log.Error(err)
+		log.Println(err)
 		return err
 	}
 	return nil

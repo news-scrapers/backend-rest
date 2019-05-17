@@ -6,8 +6,9 @@ import (
 	"os"
 	"strings"
 
+	log "log"
+
 	"github.com/dgrijalva/jwt-go"
-	log "github.com/sirupsen/logrus"
 	"golang.org/x/crypto/bcrypt"
 	"gopkg.in/mgo.v2/bson"
 )
@@ -46,7 +47,7 @@ func (account *Account) Validate() (map[string]interface{}, bool) {
 	err := collection.FindOne(context.Background(), bson.M{"email": account.Email}).Decode(foundAccount)
 
 	if err != nil {
-		log.Error(err)
+		log.Println(err)
 	}
 
 	if foundAccount.Email != "" {
@@ -69,7 +70,7 @@ func (account *Account) Create() map[string]interface{} {
 	db := GetDB()
 	collection := db.Collection("users")
 	res, err := collection.InsertOne(context.Background(), account)
-	log.Info(res)
+	log.Println(res)
 
 	if err != nil {
 		return u.Message(false, "Failed to create account, connection error.")
@@ -95,7 +96,7 @@ func Login(email, password string) (resp map[string]interface{}, code int) {
 	foundAccount := &Account{}
 	err := collection.FindOne(context.Background(), bson.M{"email": email}).Decode(foundAccount)
 	if err != nil {
-		log.Error(err)
+		log.Println(err)
 		return u.Message(false, "Connection error. Please retry"), 500
 	}
 
@@ -125,7 +126,7 @@ func GetUser(u string) *Account {
 	foundAccount := Account{}
 	err := collection.FindOne(context.Background(), bson.M{"_d": foundAccount.ID}).Decode(foundAccount)
 	if err != nil { //User not found!
-		log.Error(err)
+		log.Println(err)
 		return nil
 	}
 

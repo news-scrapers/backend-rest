@@ -7,7 +7,7 @@ import (
 	"fmt"
 	"net/http"
 
-	log "github.com/sirupsen/logrus"
+	log "log"
 )
 
 var AddNew = func(w http.ResponseWriter, r *http.Request) {
@@ -30,7 +30,7 @@ var AddMany = func(w http.ResponseWriter, r *http.Request) {
 
 	err := json.NewDecoder(r.Body).Decode(&newScraped)
 	ms := fmt.Sprintf("inserting %v news from ", len(newScraped)) + newScraped[0].NewsPaper
-	log.Info(ms)
+	log.Println(ms)
 
 	if err != nil {
 		u.Respond(w, u.Message(false, "Error while decoding request body"))
