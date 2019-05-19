@@ -48,7 +48,7 @@ func main() {
 
 	// start server listen
 	// with error handling
-	Info.Println("Starting server on port " + port)
+	log.Println("Starting server on port " + port)
 	Error.Println(http.ListenAndServe(":"+port, handlers.CORS(originsOk, headersOk, methodsOk)(router)))
 }
 
@@ -80,13 +80,12 @@ func Init(
 	Error = log.New(errorHandle,
 		"ERROR: ",
 		log.Ldate|log.Ltime|log.Lshortfile)
-	file, err := os.OpenFile("file.txt", os.O_CREATE|os.O_WRONLY|os.O_APPEND, 0666)
+	file, err := os.OpenFile("log.txt", os.O_CREATE|os.O_WRONLY|os.O_APPEND, 0666)
 
 	if err != nil {
 		log.Fatalln("Failed to open log file")
 	}
+	mw := io.MultiWriter(os.Stdout, file)
+	log.SetOutput(mw)
 
-	Logger = log.New(file,
-		"PREFIX: ",
-		log.Ldate|log.Ltime|log.Lshortfile)
 }
