@@ -1,1 +1,20 @@
 2019/05/19 20:00:10 Starting server on port 8000
+2019/05/19 20:02:29 Starting server on port 8000
+2019/05/19 20:03:43 Sun May 19 20:03:43 CEST 2019 --> GET /api/workers/scraping_index scraper_id=scraperTestba336a2
+2019/05/19 20:04:13 server selection error: server selection timeout
+current topology: Type: Unknown
+Servers:
+Addr: localhost:27017, Type: Unknown, State: Connected, Avergage RTT: 0, Last error: dial tcp 127.0.0.1:27017: connect: connection refused
+
+2019/05/19 20:04:13 Sun May 19 20:04:13 CEST 2019 --> POST /api/workers/scraping_index 
+2019/05/19 20:04:13 saving scraping index for idscraperTestba336a2 and newspaper elmundo
+2019/05/19 20:06:07 Sun May 19 20:06:07 CEST 2019 --> POST /api/workers/new_scraped_many 
+2019/05/19 20:06:07 inserting 82 news from elmundo
+2019/05/19 20:06:07 Sun May 19 20:06:07 CEST 2019 --> POST /api/workers/scraping_index 
+2019/05/19 20:06:07 saving scraping index for idscraperTestba336a2 and newspaper elmundo
+2019/05/19 20:06:07 Sun May 19 20:06:07 CEST 2019 --> GET /api/workers/scraping_index scraper_id=scraperTestba336a2
+2019/05/19 20:08:06 Sun May 19 20:08:06 CEST 2019 --> POST /api/workers/new_scraped_many 
+2019/05/19 20:08:06 inserting 80 news from elmundo
+2019/05/19 20:08:06 Sun May 19 20:08:06 CEST 2019 --> POST /api/workers/scraping_index 
+2019/05/19 20:08:06 saving scraping index for idscraperTestba336a2 and newspaper elmundo
+2019/05/19 20:08:06 Sun May 19 20:08:06 CEST 2019 --> GET /api/workers/scraping_index scraper_id=scraperTestba336a2

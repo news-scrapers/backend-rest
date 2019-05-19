@@ -4,7 +4,6 @@ import (
 	"backend-rest/controllers"
 	"backend-rest/middlewares"
 	"io"
-	ioutil "io/ioutil"
 	log "log"
 	"net/http"
 	"os"
@@ -19,7 +18,7 @@ var Logger *log.Logger
 
 func main() {
 
-	Init(ioutil.Discard, os.Stdout, os.Stdout, os.Stderr)
+	InitLogger()
 
 	router := mux.NewRouter()
 
@@ -49,37 +48,11 @@ func main() {
 	// start server listen
 	// with error handling
 	log.Println("Starting server on port " + port)
-	Error.Println(http.ListenAndServe(":"+port, handlers.CORS(originsOk, headersOk, methodsOk)(router)))
+	log.Println(http.ListenAndServe(":"+port, handlers.CORS(originsOk, headersOk, methodsOk)(router)))
 }
 
-var (
-	Trace   *log.Logger
-	Info    *log.Logger
-	Warning *log.Logger
-	Error   *log.Logger
-)
+func InitLogger() {
 
-func Init(
-	traceHandle io.Writer,
-	infoHandle io.Writer,
-	warningHandle io.Writer,
-	errorHandle io.Writer) {
-
-	Trace = log.New(traceHandle,
-		"TRACE: ",
-		log.Ldate|log.Ltime|log.Lshortfile)
-
-	Info = log.New(infoHandle,
-		"INFO: ",
-		log.Ldate|log.Ltime|log.Lshortfile)
-
-	Warning = log.New(warningHandle,
-		"WARNING: ",
-		log.Ldate|log.Ltime|log.Lshortfile)
-
-	Error = log.New(errorHandle,
-		"ERROR: ",
-		log.Ldate|log.Ltime|log.Lshortfile)
 	file, err := os.OpenFile("log.txt", os.O_CREATE|os.O_WRONLY|os.O_APPEND, 0666)
 
 	if err != nil {
