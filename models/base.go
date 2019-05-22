@@ -25,7 +25,7 @@ func init() {
 
 	ctx, _ := context.WithTimeout(context.Background(), 10*time.Second)
 	client, _ := mongo.Connect(ctx, options.Client().ApplyURI(dbAddress))
-	db = client.Database("news-scraped")
+	db = client.Database("news-scraped-round2")
 }
 
 func GetDB() *mongo.Database {

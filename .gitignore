@@ -13,7 +13,9 @@
 .idea/*
 .vscode
 .vscode/*
-logs.log
+logs.txt
+log.txt
+
 
 # Output of the go coverage tool, specifically when used with LiteIDE
 *.out
