@@ -18,3 +18,173 @@ Addr: localhost:27017, Type: Unknown, State: Connected, Avergage RTT: 0, Last er
 2019/05/19 20:08:06 Sun May 19 20:08:06 CEST 2019 --> POST /api/workers/scraping_index 
 2019/05/19 20:08:06 saving scraping index for idscraperTestba336a2 and newspaper elmundo
 2019/05/19 20:08:06 Sun May 19 20:08:06 CEST 2019 --> GET /api/workers/scraping_index scraper_id=scraperTestba336a2
+2019/10/06 19:54:38 Starting server on port 8000
+2019/10/06 19:55:32 Sun Oct 6 19:55:32 CEST 2019 --> GET /api/workers/scraping_index_newspaper scraper_id=scraperTestba336a&newspaper=lavanguardia
+2019/10/06 19:55:32 Sun Oct 6 19:55:32 CEST 2019 --> GET /api/workers/scraping_index_newspaper scraper_id=scraperTestba336a&newspaper=elpais
+2019/10/06 19:55:32 Sun Oct 6 19:55:32 CEST 2019 --> GET /api/workers/scraping_index_newspaper scraper_id=scraperTestba336a&newspaper=abc
+2019/10/06 19:55:32 Sun Oct 6 19:55:32 CEST 2019 --> GET /api/workers/scraping_index_newspaper scraper_id=scraperTestba336a&newspaper=elmundo
+2019/10/06 19:55:32 mongo: no documents in result
+2019/10/06 19:55:32 mongo: no documents in result
+2019/10/06 19:55:32 mongo: no documents in result
+2019/10/06 19:55:32 mongo: no documents in result
+2019/10/06 19:55:32 Sun Oct 6 19:55:32 CEST 2019 --> POST /api/workers/scraping_index 
+2019/10/06 19:55:32 Sun Oct 6 19:55:32 CEST 2019 --> POST /api/workers/scraping_index 
+2019/10/06 19:55:32 saving scraping index for idscraperTestba336a and newspaper abc
+2019/10/06 19:55:32 saving scraping index for idscraperTestba336a and newspaper elpais
+2019/10/06 19:55:32 Sun Oct 6 19:55:32 CEST 2019 --> POST /api/workers/scraping_index 
+2019/10/06 19:55:32 Sun Oct 6 19:55:32 CEST 2019 --> POST /api/workers/scraping_index 
+2019/10/06 19:55:32 saving scraping index for idscraperTestba336a and newspaper lavanguardia
+2019/10/06 19:55:32 saving scraping index for idscraperTestba336a and newspaper elmundo
+2019/10/06 19:55:40 Sun Oct 6 19:55:40 CEST 2019 --> POST /api/workers/new_scraped_many 
+2019/10/06 19:55:40 inserting 52 news from lavanguardia
+2019/10/06 19:55:40 Sun Oct 6 19:55:40 CEST 2019 --> POST /api/workers/scraping_index 
+2019/10/06 19:55:40 saving scraping index for idscraperTestba336a and newspaper lavanguardia
+2019/10/06 19:55:56 Sun Oct 6 19:55:56 CEST 2019 --> POST /api/workers/new_scraped_many 
+2019/10/06 19:55:56 inserting 81 news from elmundo
+2019/10/06 19:55:56 Sun Oct 6 19:55:56 CEST 2019 --> POST /api/workers/scraping_index 
+2019/10/06 19:55:56 saving scraping index for idscraperTestba336a and newspaper elmundo
+2019/10/06 19:56:45 Sun Oct 6 19:56:45 CEST 2019 --> POST /api/workers/new_scraped_many 
+2019/10/06 19:56:45 inserting 239 news from elpais
+2019/10/06 19:56:45 Sun Oct 6 19:56:45 CEST 2019 --> POST /api/workers/scraping_index 
+2019/10/06 19:56:45 saving scraping index for idscraperTestba336a and newspaper elpais
+2019/10/06 19:57:06 Sun Oct 6 19:57:06 CEST 2019 --> POST /api/workers/new_scraped_many 
+2019/10/06 19:57:06 inserting 82 news from abc
+2019/10/06 19:57:06 Sun Oct 6 19:57:06 CEST 2019 --> POST /api/workers/scraping_index 
+2019/10/06 19:57:06 saving scraping index for idscraperTestba336a and newspaper abc
+2019/10/06 19:57:06 Sun Oct 6 19:57:06 CEST 2019 --> GET /api/workers/scraping_index_newspaper scraper_id=scraperTestba336a&newspaper=abc
+2019/10/06 19:57:06 Sun Oct 6 19:57:06 CEST 2019 --> GET /api/workers/scraping_index_newspaper scraper_id=scraperTestba336a&newspaper=lavanguardia
+2019/10/06 19:57:06 Sun Oct 6 19:57:06 CEST 2019 --> GET /api/workers/scraping_index_newspaper scraper_id=scraperTestba336a&newspaper=elpais
+2019/10/06 19:57:06 Sun Oct 6 19:57:06 CEST 2019 --> GET /api/workers/scraping_index_newspaper scraper_id=scraperTestba336a&newspaper=elmundo
+2019/10/06 19:57:13 Sun Oct 6 19:57:13 CEST 2019 --> POST /api/workers/new_scraped_many 
+2019/10/06 19:57:13 inserting 52 news from lavanguardia
+2019/10/06 19:57:13 Sun Oct 6 19:57:13 CEST 2019 --> POST /api/workers/scraping_index 
+2019/10/06 19:57:13 saving scraping index for idscraperTestba336a and newspaper lavanguardia
+2019/10/06 19:57:22 Sun Oct 6 19:57:22 CEST 2019 --> POST /api/workers/new_scraped_many 
+2019/10/06 19:57:22 inserting 83 news from elmundo
+2019/10/06 19:57:22 Sun Oct 6 19:57:22 CEST 2019 --> POST /api/workers/scraping_index 
+2019/10/06 19:57:22 saving scraping index for idscraperTestba336a and newspaper elmundo
+2019/10/06 19:57:56 Sun Oct 6 19:57:56 CEST 2019 --> POST /api/workers/new_scraped_many 
+2019/10/06 19:57:56 inserting 227 news from elpais
+2019/10/06 19:57:56 Sun Oct 6 19:57:56 CEST 2019 --> POST /api/workers/scraping_index 
+2019/10/06 19:57:56 saving scraping index for idscraperTestba336a and newspaper elpais
+2019/10/06 19:58:41 Sun Oct 6 19:58:41 CEST 2019 --> POST /api/workers/new_scraped_many 
+2019/10/06 19:58:41 inserting 82 news from abc
+2019/10/06 19:58:41 Sun Oct 6 19:58:41 CEST 2019 --> POST /api/workers/scraping_index 
+2019/10/06 19:58:41 saving scraping index for idscraperTestba336a and newspaper abc
+2019/10/06 19:58:41 Sun Oct 6 19:58:41 CEST 2019 --> GET /api/workers/scraping_index_newspaper scraper_id=scraperTestba336a&newspaper=lavanguardia
+2019/10/06 19:58:41 Sun Oct 6 19:58:41 CEST 2019 --> GET /api/workers/scraping_index_newspaper scraper_id=scraperTestba336a&newspaper=abc
+2019/10/06 19:58:41 Sun Oct 6 19:58:41 CEST 2019 --> GET /api/workers/scraping_index_newspaper scraper_id=scraperTestba336a&newspaper=elpais
+2019/10/06 19:58:41 Sun Oct 6 19:58:41 CEST 2019 --> GET /api/workers/scraping_index_newspaper scraper_id=scraperTestba336a&newspaper=elmundo
+2019/10/06 19:58:48 Sun Oct 6 19:58:48 CEST 2019 --> POST /api/workers/new_scraped_many 
+2019/10/06 19:58:48 inserting 52 news from lavanguardia
+2019/10/06 19:58:48 Sun Oct 6 19:58:48 CEST 2019 --> POST /api/workers/scraping_index 
+2019/10/06 19:58:48 saving scraping index for idscraperTestba336a and newspaper lavanguardia
+2019/10/06 19:58:58 Sun Oct 6 19:58:58 CEST 2019 --> POST /api/workers/new_scraped_many 
+2019/10/06 19:58:58 inserting 81 news from elmundo
+2019/10/06 19:58:58 Sun Oct 6 19:58:58 CEST 2019 --> POST /api/workers/scraping_index 
+2019/10/06 19:58:58 saving scraping index for idscraperTestba336a and newspaper elmundo
+2019/10/06 19:59:34 Sun Oct 6 19:59:34 CEST 2019 --> POST /api/workers/new_scraped_many 
+2019/10/06 19:59:34 inserting 238 news from elpais
+2019/10/06 19:59:34 Sun Oct 6 19:59:34 CEST 2019 --> POST /api/workers/scraping_index 
+2019/10/06 19:59:34 saving scraping index for idscraperTestba336a and newspaper elpais
+2019/10/06 20:00:47 Sun Oct 6 20:00:47 CEST 2019 --> POST /api/workers/new_scraped_many 
+2019/10/06 20:00:47 inserting 82 news from abc
+2019/10/06 20:00:47 Sun Oct 6 20:00:47 CEST 2019 --> POST /api/workers/scraping_index 
+2019/10/06 20:00:47 saving scraping index for idscraperTestba336a and newspaper abc
+2019/10/06 20:00:47 Sun Oct 6 20:00:47 CEST 2019 --> GET /api/workers/scraping_index_newspaper scraper_id=scraperTestba336a&newspaper=elmundo
+2019/10/06 20:00:47 Sun Oct 6 20:00:47 CEST 2019 --> GET /api/workers/scraping_index_newspaper scraper_id=scraperTestba336a&newspaper=abc
+2019/10/06 20:00:47 Sun Oct 6 20:00:47 CEST 2019 --> GET /api/workers/scraping_index_newspaper scraper_id=scraperTestba336a&newspaper=lavanguardia
+2019/10/06 20:00:47 Sun Oct 6 20:00:47 CEST 2019 --> GET /api/workers/scraping_index_newspaper scraper_id=scraperTestba336a&newspaper=elpais
+2019/10/06 20:00:55 Sun Oct 6 20:00:55 CEST 2019 --> POST /api/workers/new_scraped_many 
+2019/10/06 20:00:55 inserting 52 news from lavanguardia
+2019/10/06 20:00:55 Sun Oct 6 20:00:55 CEST 2019 --> POST /api/workers/scraping_index 
+2019/10/06 20:00:55 saving scraping index for idscraperTestba336a and newspaper lavanguardia
+2019/10/06 20:01:09 Sun Oct 6 20:01:09 CEST 2019 --> POST /api/workers/new_scraped_many 
+2019/10/06 20:01:09 inserting 81 news from elmundo
+2019/10/06 20:01:09 Sun Oct 6 20:01:09 CEST 2019 --> POST /api/workers/scraping_index 
+2019/10/06 20:01:09 saving scraping index for idscraperTestba336a and newspaper elmundo
+2019/10/06 20:01:38 Sun Oct 6 20:01:38 CEST 2019 --> POST /api/workers/new_scraped_many 
+2019/10/06 20:01:38 inserting 219 news from elpais
+2019/10/06 20:01:38 Sun Oct 6 20:01:38 CEST 2019 --> POST /api/workers/scraping_index 
+2019/10/06 20:01:38 saving scraping index for idscraperTestba336a and newspaper elpais
+2019/10/06 20:03:06 Sun Oct 6 20:03:06 CEST 2019 --> POST /api/workers/new_scraped_many 
+2019/10/06 20:03:06 inserting 82 news from abc
+2019/10/06 20:03:06 Sun Oct 6 20:03:06 CEST 2019 --> POST /api/workers/scraping_index 
+2019/10/06 20:03:06 saving scraping index for idscraperTestba336a and newspaper abc
+2019/10/06 20:03:06 Sun Oct 6 20:03:06 CEST 2019 --> GET /api/workers/scraping_index_newspaper scraper_id=scraperTestba336a&newspaper=lavanguardia
+2019/10/06 20:03:06 Sun Oct 6 20:03:06 CEST 2019 --> GET /api/workers/scraping_index_newspaper scraper_id=scraperTestba336a&newspaper=elmundo
+2019/10/06 20:03:06 Sun Oct 6 20:03:06 CEST 2019 --> GET /api/workers/scraping_index_newspaper scraper_id=scraperTestba336a&newspaper=elpais
+2019/10/06 20:03:06 Sun Oct 6 20:03:06 CEST 2019 --> GET /api/workers/scraping_index_newspaper scraper_id=scraperTestba336a&newspaper=abc
+2019/10/06 20:03:13 Sun Oct 6 20:03:13 CEST 2019 --> POST /api/workers/new_scraped_many 
+2019/10/06 20:03:13 inserting 52 news from lavanguardia
+2019/10/06 20:03:13 Sun Oct 6 20:03:13 CEST 2019 --> POST /api/workers/scraping_index 
+2019/10/06 20:03:13 saving scraping index for idscraperTestba336a and newspaper lavanguardia
+2019/10/06 20:03:27 Sun Oct 6 20:03:27 CEST 2019 --> POST /api/workers/new_scraped_many 
+2019/10/06 20:03:27 inserting 81 news from elmundo
+2019/10/06 20:03:27 Sun Oct 6 20:03:27 CEST 2019 --> POST /api/workers/scraping_index 
+2019/10/06 20:03:27 saving scraping index for idscraperTestba336a and newspaper elmundo
+2019/10/06 20:03:50 Sun Oct 6 20:03:50 CEST 2019 --> POST /api/workers/new_scraped_many 
+2019/10/06 20:03:50 inserting 203 news from elpais
+2019/10/06 20:03:50 Sun Oct 6 20:03:50 CEST 2019 --> POST /api/workers/scraping_index 
+2019/10/06 20:03:50 saving scraping index for idscraperTestba336a and newspaper elpais
+2019/10/06 20:04:59 Sun Oct 6 20:04:59 CEST 2019 --> POST /api/workers/new_scraped_many 
+2019/10/06 20:04:59 inserting 82 news from abc
+2019/10/06 20:04:59 Sun Oct 6 20:04:59 CEST 2019 --> POST /api/workers/scraping_index 
+2019/10/06 20:04:59 saving scraping index for idscraperTestba336a and newspaper abc
+2019/10/06 20:04:59 Sun Oct 6 20:04:59 CEST 2019 --> GET /api/workers/scraping_index_newspaper scraper_id=scraperTestba336a&newspaper=abc
+2019/10/06 20:04:59 Sun Oct 6 20:04:59 CEST 2019 --> GET /api/workers/scraping_index_newspaper scraper_id=scraperTestba336a&newspaper=lavanguardia
+2019/10/06 20:04:59 Sun Oct 6 20:04:59 CEST 2019 --> GET /api/workers/scraping_index_newspaper scraper_id=scraperTestba336a&newspaper=elmundo
+2019/10/06 20:04:59 Sun Oct 6 20:04:59 CEST 2019 --> GET /api/workers/scraping_index_newspaper scraper_id=scraperTestba336a&newspaper=elpais
+2019/10/06 20:05:07 Sun Oct 6 20:05:07 CEST 2019 --> POST /api/workers/new_scraped_many 
+2019/10/06 20:05:07 inserting 54 news from lavanguardia
+2019/10/06 20:05:07 Sun Oct 6 20:05:07 CEST 2019 --> POST /api/workers/scraping_index 
+2019/10/06 20:05:07 saving scraping index for idscraperTestba336a and newspaper lavanguardia
+2019/10/06 20:05:16 Sun Oct 6 20:05:16 CEST 2019 --> POST /api/workers/new_scraped_many 
+2019/10/06 20:05:16 inserting 81 news from elmundo
+2019/10/06 20:05:16 Sun Oct 6 20:05:16 CEST 2019 --> POST /api/workers/scraping_index 
+2019/10/06 20:05:16 saving scraping index for idscraperTestba336a and newspaper elmundo
+2019/10/06 20:06:25 Sun Oct 6 20:06:25 CEST 2019 --> POST /api/workers/new_scraped_many 
+2019/10/06 20:06:25 inserting 216 news from elpais
+2019/10/06 20:06:25 Sun Oct 6 20:06:25 CEST 2019 --> POST /api/workers/scraping_index 
+2019/10/06 20:06:25 saving scraping index for idscraperTestba336a and newspaper elpais
+2019/10/06 20:06:30 Sun Oct 6 20:06:30 CEST 2019 --> POST /api/workers/new_scraped_many 
+2019/10/06 20:06:30 inserting 82 news from abc
+2019/10/06 20:06:30 Sun Oct 6 20:06:30 CEST 2019 --> POST /api/workers/scraping_index 
+2019/10/06 20:06:30 saving scraping index for idscraperTestba336a and newspaper abc
+2019/10/06 20:06:30 Sun Oct 6 20:06:30 CEST 2019 --> GET /api/workers/scraping_index_newspaper scraper_id=scraperTestba336a&newspaper=elpais
+2019/10/06 20:06:30 Sun Oct 6 20:06:30 CEST 2019 --> GET /api/workers/scraping_index_newspaper scraper_id=scraperTestba336a&newspaper=abc
+2019/10/06 20:06:30 Sun Oct 6 20:06:30 CEST 2019 --> GET /api/workers/scraping_index_newspaper scraper_id=scraperTestba336a&newspaper=lavanguardia
+2019/10/06 20:06:30 Sun Oct 6 20:06:30 CEST 2019 --> GET /api/workers/scraping_index_newspaper scraper_id=scraperTestba336a&newspaper=elmundo
+2019/10/06 20:06:37 Sun Oct 6 20:06:37 CEST 2019 --> POST /api/workers/new_scraped_many 
+2019/10/06 20:06:37 inserting 48 news from lavanguardia
+2019/10/06 20:06:37 Sun Oct 6 20:06:37 CEST 2019 --> POST /api/workers/scraping_index 
+2019/10/06 20:06:37 saving scraping index for idscraperTestba336a and newspaper lavanguardia
+2019/10/06 20:06:40 Sun Oct 6 20:06:40 CEST 2019 --> POST /api/workers/new_scraped_many 
+2019/10/06 20:06:40 inserting 83 news from elmundo
+2019/10/06 20:06:40 Sun Oct 6 20:06:40 CEST 2019 --> POST /api/workers/scraping_index 
+2019/10/06 20:06:40 saving scraping index for idscraperTestba336a and newspaper elmundo
+2019/10/06 20:07:23 Sun Oct 6 20:07:23 CEST 2019 --> POST /api/workers/new_scraped_many 
+2019/10/06 20:07:23 inserting 163 news from elpais
+2019/10/06 20:07:23 Sun Oct 6 20:07:23 CEST 2019 --> POST /api/workers/scraping_index 
+2019/10/06 20:07:23 saving scraping index for idscraperTestba336a and newspaper elpais
+2019/10/06 20:08:16 Sun Oct 6 20:08:16 CEST 2019 --> POST /api/workers/new_scraped_many 
+2019/10/06 20:08:16 inserting 82 news from abc
+2019/10/06 20:08:16 Sun Oct 6 20:08:16 CEST 2019 --> POST /api/workers/scraping_index 
+2019/10/06 20:08:16 saving scraping index for idscraperTestba336a and newspaper abc
+2019/10/06 20:08:16 Sun Oct 6 20:08:16 CEST 2019 --> GET /api/workers/scraping_index_newspaper scraper_id=scraperTestba336a&newspaper=abc
+2019/10/06 20:08:16 Sun Oct 6 20:08:16 CEST 2019 --> GET /api/workers/scraping_index_newspaper scraper_id=scraperTestba336a&newspaper=elpais
+2019/10/06 20:08:16 Sun Oct 6 20:08:16 CEST 2019 --> GET /api/workers/scraping_index_newspaper scraper_id=scraperTestba336a&newspaper=elmundo
+2019/10/06 20:08:16 Sun Oct 6 20:08:16 CEST 2019 --> GET /api/workers/scraping_index_newspaper scraper_id=scraperTestba336a&newspaper=lavanguardia
+2019/10/06 20:08:25 Sun Oct 6 20:08:25 CEST 2019 --> POST /api/workers/new_scraped_many 
+2019/10/06 20:08:25 inserting 53 news from lavanguardia
+2019/10/06 20:08:25 Sun Oct 6 20:08:25 CEST 2019 --> POST /api/workers/scraping_index 
+2019/10/06 20:08:25 saving scraping index for idscraperTestba336a and newspaper lavanguardia
+2019/10/06 20:08:30 Sun Oct 6 20:08:30 CEST 2019 --> POST /api/workers/new_scraped_many 
+2019/10/06 20:08:30 inserting 80 news from elmundo
+2019/10/06 20:08:30 Sun Oct 6 20:08:30 CEST 2019 --> POST /api/workers/scraping_index 
+2019/10/06 20:08:30 saving scraping index for idscraperTestba336a and newspaper elmundo
+2019/10/06 20:09:06 Sun Oct 6 20:09:06 CEST 2019 --> POST /api/workers/new_scraped_many 
+2019/10/06 20:09:06 inserting 217 news from elpais
+2019/10/06 20:09:06 Sun Oct 6 20:09:06 CEST 2019 --> POST /api/workers/scraping_index 
+2019/10/06 20:09:06 saving scraping index for idscraperTestba336a and newspaper elpais
+2019/11/24 19:56:26 Starting server on port 8000
