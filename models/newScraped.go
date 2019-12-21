@@ -11,15 +11,16 @@ import (
 )
 
 type NewScraped struct {
-	Page      int       `json:"page"`
-	FullPage  bool      `json:"full_page"`
-	Headline  string    `json:"headline"`
-	Date      time.Time `json:"date"`
-	Content   string    `json:"content"`
-	Url       string    `json:"url"`
-	NewsPaper string    `json:"newspaper"`
+	Page      int       `json:"page" bson:"page"`
+	FullPage  bool      `json:"full_page" bson:"full_page"`
+	Headline  string    `json:"headline" bson:"headline"`
+	Date      time.Time `json:"date" bson:"date"`
+	Content   string    `json:"content" bson:"content"`
+	Url       string    `json:"url" bson:"url"`
+	NewsPaper string    `json:"newspaper" bson:"newspaper"`
 	ScraperID string    `json:"scraper_id" bson:"scraper_id"`
-	ID        string    `json:"id"`
+	ID        string    `json:"id" bson:"id"`
+	Tags      []string  `json:"tags" bson:"tags"`
 }
 
 func (newScraped *NewScraped) Create() map[string]interface{} {

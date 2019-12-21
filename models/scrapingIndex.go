@@ -30,7 +30,8 @@ func (scrapingIndex *ScrapingIndex) Save() map[string]interface{} {
 	upsert := true
 	options.Upsert = &upsert
 
-	log.Println("saving scraping index for id" + scrapingIndex.ScraperID + " and newspaper " + scrapingIndex.NewsPaper)
+	log.Println("saving scraping index for id" + scrapingIndex.ScraperID + " and newspaper ")
+	log.Println(scrapingIndex.NewsPaper)
 	err := collection.FindOneAndReplace(context.Background(), bson.M{"scraper_id": scrapingIndex.ScraperID, "newspaper": scrapingIndex.NewsPaper}, scrapingIndex, &options)
 
 	if err == nil {
