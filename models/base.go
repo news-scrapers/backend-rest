@@ -3,6 +3,7 @@ package models
 import (
 	"context"
 	"fmt"
+	"log"
 	"os"
 	"time"
 
@@ -25,7 +26,13 @@ func init() {
 	dbName := os.Getenv("database_name")
 
 	ctx, _ := context.WithTimeout(context.Background(), 10*time.Second)
-	client, _ := mongo.Connect(ctx, options.Client().ApplyURI(dbAddress))
+	client, err := mongo.Connect(ctx, options.Client().ApplyURI(dbAddress))
+	log.Println(client)
+	log.Println(err)
+	log.Println(dbAddress)
+	if err != nil {
+		panic(err)
+	}
 	db = client.Database(dbName)
 }
 
